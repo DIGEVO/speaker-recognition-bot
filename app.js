@@ -9,10 +9,10 @@ const bot = utils.initBot();
 
 bot.dialog('/', (session) => {
 
-    const txt = session.message.attachments
-        .map(att => JSON.stringify(att)).join('<->');
-    //session.message.address.channelId
-    session.send(txt);
+    // const txt = session.message.attachments
+    //     .map(att => JSON.stringify(att)).join('<->');
+    // //session.message.address.channelId
+    // session.send(txt);
 
     if (session.message.attachments.length > 0) {
         const attachment = msg.attachments[0];
