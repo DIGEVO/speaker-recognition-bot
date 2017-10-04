@@ -15,7 +15,7 @@ bot.dialog('/', (session) => {
     // session.send(txt);
 
     if (session.message.attachments.length > 0) {
-        const attachment = msg.attachments[0];
+        const attachment = session.message.attachments[0];
 
         session.send({
             text: "You sent:",
