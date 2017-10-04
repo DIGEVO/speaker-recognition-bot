@@ -6,7 +6,10 @@ const utils = require('./utils');
 const bot = utils.initBot();
 
 bot.dialog('/', (session) => {
-    session.send(`Hola ${getName(session.message)}, me dijiste: ${JSON.stringify(session.message)}`)
+
+    const txt = session.message.attachments.map(att => JSON.stringify(att)).join('<->');//  reduce((acc, att) => acc.concat(JSON.stringify(att), "<->"),"");
+
+    session.send(txt);
 });
 
 
